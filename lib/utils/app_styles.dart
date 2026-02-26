@@ -32,4 +32,9 @@ abstract final class AppStyles{
       color: AppColors.lightBlack,
       fontSize:24
   );
+  static const TextStyle lightBlackBold14 = TextStyle(
+      fontWeight: FontWeight.bold,
+      color: AppColors.lightBlack,
+      fontSize:14
+  );
 }

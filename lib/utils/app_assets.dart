@@ -16,4 +16,5 @@ abstract final class AppAssets {
   static const String mosque      = '${_base}mosque_img.png';
   static const String quranTab    = '${_base}quran_tab_bg.png';
   static const String splash      = '${_base}Splash Screen.png';
+  static const String imgMostRecent      = '${_base}img_most_recent.png';
 }
