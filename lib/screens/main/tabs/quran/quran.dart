@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:islami_i/screens/sura_details/sura_details.dart';
+import 'package:islami_i/utils/Constants.dart';
 import 'package:islami_i/utils/app_assets.dart';
 import 'package:islami_i/utils/app_colors.dart';
 import 'package:islami_i/utils/app_styles.dart';
@@ -20,14 +22,15 @@ class Quran extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Column(
-            //crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Image.asset(AppAssets.logoPng),
              SizedBox(height: 16,),
              buildSuraNameTextField(),
               SizedBox(height: 20,),
-              Expanded(flex: 3, child: buildMostRecentList()),
-              Spacer(flex: 7,),
+             // Expanded(flex: 3, child: buildMostRecentList()),
+            Text("Suras List", style: AppStyles.whiteBold16, textAlign: TextAlign.start,),
+              Expanded(flex: 7, child: buildSuraList()),
             ],
           ),
         ),
@@ -95,5 +98,59 @@ class Quran extends StatelessWidget {
         ],
       ),
     );
+
+  Widget buildSuraList() {
+    return ListView.separated(
+      itemCount: suras.length ,
+        itemBuilder: (context, index){
+        return buildSuraItem(context,suras[index]);
+        },
+      separatorBuilder: (_, _) => Divider(),
+    );
+  }
+  Widget buildSuraItem(BuildContext context,SuraDM sura,) => InkWell(
+    onTap: (){
+      Navigator.pushNamed(context, SuraDetails.routeName, arguments: sura);
+    },
+    child: Row(
+    children: [
+    Container(
+      padding: EdgeInsets.all(20),
+      decoration: BoxDecoration(
+          image: DecorationImage(
+          image: AssetImage(AppAssets.imgSurNumberFrame,),
+          ),
+      ),
+      child: Text("${sura.index + 1}",style: AppStyles.whiteBold14,),
+    ),
+    SizedBox(width:24,),
+    Expanded(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+        Text(sura.nameEn,style: AppStyles.whiteBold20,),
+         Text("${sura.verses}Verses", style: AppStyles.whiteBold14,),
+      ],),
+    ),
+    Text(sura.nameAr,style: AppStyles.whiteBold20,)
+    ],
+    ),
+  );
+  }
+  class SuraDM{
+  String nameEn;
+  String nameAr;
+  String verses;
+  int index;
+
+  SuraDM(
+      {
+        required this.nameEn,
+        required this.nameAr,
+        required this.verses,
+        required this.index
+      }
+      );
+
   }
 
