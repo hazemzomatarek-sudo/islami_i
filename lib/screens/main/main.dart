@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islami_i/screens/main/tabs/ahadeth/ahadeth.dart';
 import 'package:islami_i/screens/main/tabs/quran/quran.dart';
+import 'package:islami_i/screens/sebha/sebha.dart';
 import 'package:islami_i/utils/app_assets.dart';
 import 'package:islami_i/utils/app_colors.dart';
 class Main extends StatefulWidget {
@@ -16,7 +17,7 @@ class _MainState extends State<Main> {
   List<Widget> tabs = [
     Quran(),
     AhadethTab(),
-    Container(color: Colors.yellow,),
+    Sebha(),
     Container(color: Colors.red,),
     Container(color: Colors.red,),
   ];

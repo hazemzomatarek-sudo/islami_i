@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:islami_i/screens/Intro/intro.dart';
 import 'package:islami_i/screens/main/main.dart';
 import 'package:islami_i/utils/app_assets.dart';
 class Splash extends StatefulWidget {
@@ -16,7 +17,7 @@ class _SplashState extends State<Splash> {
   void initState(){
     super.initState();
     Timer(Duration(seconds: 2),(){
-      Navigator.pushNamed(context, Main.routeName);
+      Navigator.pushNamed(context, Intro.routeName);
     });
   }
   Widget build(BuildContext context) {

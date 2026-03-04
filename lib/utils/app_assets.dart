@@ -18,4 +18,11 @@ abstract final class AppAssets {
   static const String splash      = '${_base}Splash Screen.png';
   static const String imgMostRecent      = '${_base}img_most_recent.png';
   static const String imgSurNumberFrame     = '${_base}img_sur_number_frame.png';
+  static const String introTextImg     = '${_base}intro_text.png';
+  static const String introMasgedImg     = '${_base}masged_intro (1).png';
+  static const String introMiceImg     = '${_base}mice_intro (1).png';
+  static const String introMoshafImg     = '${_base}moshaf_intro.png';
+  static const String introDoaaImg     = '${_base}doaa_intro (1).png';
+  static const String sebhaImg     = '${_base}Sebha.png';
+  static const String sebhaBg     = '${_base}Background_sebha.png';
 }
